@@ -1,5 +1,9 @@
 # TravelTales
 
+### 🌍✨ TravelTales is a community-driven travel blog platform built with Django 🐍, where users can share stories 📝, photos 📸, and experiences 🌆 from cities around the globe like Tokyo 🇯🇵, Mumbai 🇮🇳, Sydney 🇦🇺, and more.
+
+### Tech-Stack: Python - Django Framework
+
 https://github.com/user-attachments/assets/a289072f-23a3-4773-93fc-472e60c7ad4b
 
 https://github.com/user-attachments/assets/531b5a06-b996-4c6f-b54e-590a2c0aa5a6
