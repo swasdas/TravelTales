@@ -2,6 +2,8 @@
 
 https://github.com/user-attachments/assets/a289072f-23a3-4773-93fc-472e60c7ad4b
 
+https://github.com/user-attachments/assets/531b5a06-b996-4c6f-b54e-590a2c0aa5a6
+
 ## Useful Commands
 ```python
 python --version
