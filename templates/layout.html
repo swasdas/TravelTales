@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Django App 
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <span role="img" aria-label="Home" title="Home">
+                Home
+            </span>
+        </a> |
+        <a href="/about">
+            <span role="img" aria-label="About" title="About TravelTales">
+                About
+            </span>
+        </a> | 
+        <a href="{% url 'posts:list' %}" title="log">
+            {% comment %} above url came from 'app_name:path-name' from posts -> url.py {% endcomment %}
+            <span role="img" aria-label="Posts">
+                Posts
+            </span>
+        </a> |  
+        
+        {% comment %} show only if user is login {% endcomment %}
+        {% if user.is_authenticated %} 
+            <a href="{% url 'posts:new-post' %}" title="Add New Post in TravelTales">
+                {% comment %} above url came from 'app_name:path-name' from posts -> url.py {% endcomment %}
+                <span role="img" aria-label="New Post">
+                    New Post
+                </span>
+            </a>  | 
+            <form class="logout" action="{% url 'users:logout' %}" method="post">
+                {% comment %} above url came from 'app_name:path-name' from users -> url.py {% endcomment %}
+                {% csrf_token %}
+                <button class="logout-button" aria-label="User Logout" title="User Logout">
+                    Logout
+                </button>
+            </form> 
+
+        {% else %}
+            <a href="{% url 'users:register' %}" title="Register New User">
+                {% comment %} above url came from 'app_name:path-name' from users -> url.py {% endcomment %}
+                <span role="img" aria-label="User Registeration">
+                    New User
+                </span>
+            </a> | 
+            <a href="{% url 'users:login' %}" title="User Login">
+                {% comment %} above url came from 'app_name:path-name' from users -> url.py {% endcomment %}
+                <span role="img" aria-label="User Login">
+                    Login
+                </span>
+            </a>
+        {% endif %}
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
